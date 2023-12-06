@@ -1,5 +1,6 @@
 package com.plcoding.dictionary.feature_dictionary.data.remote.dto
 
+import com.plcoding.dictionary.feature_dictionary.data.local.WordInfoEntity
 import com.plcoding.dictionary.feature_dictionary.domain.model.WordInfo
 
 /**
@@ -15,13 +16,13 @@ data class WordInfoDto(
     val word: String
 ){
     /**
-     * Fungsi [toWordInfo] mengonversi objek [WordInfoDto] menjadi objek
-     * domain [WordInfo].
+     * Fungsi [toWordInfoEntity] mengonversi objek [WordInfoDto] menjadi objek
+     * domain [WordInfoEntity].
      *
-     * @return Objek [WordInfo] yang dibentuk dari data dalam objek [WordInfoDto].
+     * @return Objek [WordInfoEntity] yang dibentuk dari data dalam objek [WordInfoDto].
      */
-    fun toWordInfo(): WordInfo{
-        return WordInfo(
+    fun toWordInfoEntity(): WordInfoEntity{
+        return WordInfoEntity(
             meanings = meanings.map { it.toMeaning() },
             origin = origin,
             phonetic = phonetic,
