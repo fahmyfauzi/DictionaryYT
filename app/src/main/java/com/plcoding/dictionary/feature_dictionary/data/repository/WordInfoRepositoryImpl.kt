@@ -1,5 +1,6 @@
 package com.plcoding.dictionary.feature_dictionary.data.repository
 
+import android.util.Log
 import com.plcoding.dictionary.core.util.Resource
 import com.plcoding.dictionary.feature_dictionary.data.local.WordInfoDao
 import com.plcoding.dictionary.feature_dictionary.data.remote.DictionaryApi
@@ -54,6 +55,7 @@ class WordInfoRepositoryImpl(
             ))
         }catch (e:HttpException){
             // Mengirim status Error jika terjadi HttpException (kesalahan server)
+            Log.e("HTTPEXCCEPTION: ",e.printStackTrace().toString())
             emit(Resource.Error(
                 message = "Oops, Something went wrong!",
                 data = wordInfos

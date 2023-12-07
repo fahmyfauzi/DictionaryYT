@@ -27,6 +27,6 @@ interface DictionaryApi {
         /**
          * Konstanta [BASE_URL] adalah URL dasar untuk mengakses API kamus.
          */
-        const val BASE_URL ="https://dictionaryapi.dev/"
+        const val BASE_URL ="https://api.dictionaryapi.dev/"
     }
 }
