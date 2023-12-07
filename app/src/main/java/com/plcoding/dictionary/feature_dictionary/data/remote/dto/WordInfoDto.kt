@@ -10,8 +10,8 @@ import com.plcoding.dictionary.feature_dictionary.domain.model.WordInfo
 
 data class WordInfoDto(
     val meanings: List<MeaningDto>,
-    val origin:String,
-    val phonetic: String,
+    val origin:String?,
+    val phonetic: String?,
     val phonetics: List<PhoneticDto>,
     val word: String
 ){
@@ -24,8 +24,8 @@ data class WordInfoDto(
     fun toWordInfoEntity(): WordInfoEntity{
         return WordInfoEntity(
             meanings = meanings.map { it.toMeaning() },
-            origin = origin,
-            phonetic = phonetic,
+            origin = origin ?: "",
+            phonetic = phonetic ?: "",
             word = word
         )
     }

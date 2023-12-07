@@ -67,7 +67,7 @@ object WordInfoModule {
     @Singleton
     fun provideWordInfoDatabase(app:Application) : WordInfoDatabase{
         return Room.databaseBuilder(
-            app, WordInfoDatabase::class.java, "word_db"
+            app, WordInfoDatabase::class.java, "word_db2"
         ).addTypeConverter(Converters(GsonParser(Gson())))
             .build()
     }
