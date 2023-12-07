@@ -22,4 +22,11 @@ interface DictionaryApi {
     suspend fun getWordInfo(
         @Path("word") word:String
     ): List<WordInfoDto>
+
+    companion object{
+        /**
+         * Konstanta [BASE_URL] adalah URL dasar untuk mengakses API kamus.
+         */
+        const val BASE_URL ="https://dictionaryapi.dev/"
+    }
 }
